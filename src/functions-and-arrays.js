@@ -62,8 +62,7 @@ function sum(arr) {
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(arr) {
-  if (arr === []) {
-    // this did not work
+  if (arr.length === 0) {
     return null;
   } else {
     let average = sumNumbers(arr) / arr.length;
@@ -75,8 +74,7 @@ function averageNumbers(arr) {
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(arr) {
-  if (arr === []) {
-    // this did not work
+  if (arr.length === 0) {
     return null;
   } else {
     return sum(arr) / arr.length;
@@ -85,8 +83,7 @@ function averageWordLength(arr) {
 
 // Bonus - Iteration #4.1
 function avg(arr) {
-  if (arr === []) {
-    // this did not work
+  if (arr.length === 0) {
     return null;
   } else {
     let avgMixed = sum(arr) / arr.length;
@@ -110,15 +107,20 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(arr) {
-  let sortedArray = arr.sort();
-  let sortedReducedArray = [];
+  //let sortedArray = arr.sort();
+  let reducedArray = [];
 
-  for (let i = 0; i < sortedArray.length; i++) {
-    if (sortedArray[i] !== sortedArray[i + 1]) {
-      sortedReducedArray.push(sortedArray[i]);
+  if (arr.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (reducedArray.indexOf(arr[i]) === -1) {
+      //if reducedArray doesn't have that element before, push it inside. otherwise leave it out
+      reducedArray.push(arr[i]);
     }
   }
-  return sortedReducedArray;
+  return reducedArray;
 }
 
 // Iteration #6: Find elements
